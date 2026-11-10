@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mise · Gestión de cocina y sala</title>
+  <meta name="description" content="Mise: gestión de restaurantes pequeños. Sala y comandas, pantalla de cocina, inventario, pedidos, escandallos, APPCC, alérgenos, mermas e informes.">
+  <meta name="theme-color" content="#16110e">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="img/icono.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="img/icono-192.png">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body class="sin-sesion">
+  <!-- Barra lateral (en móvil se convierte en barra inferior). Los enlaces dependen del rol -->
+  <nav class="menu" aria-label="Secciones">
+    <div class="marca">
+      <img src="img/icono.svg" alt="" width="32" height="32">
+      <div>
+        <strong>Mise</strong>
+        <small>gestión de restaurante</small>
+      </div>
+    </div>
+    <div id="menu-enlaces"></div>
+    <p class="firma">Mise v2.0 · por diegofo</p>
+  </nav>
+
+  <main>
+    <div class="barra-sup" id="barra-sup"></div>
+    <div id="contenido" tabindex="-1">
+      <!-- Aquí app.js dibuja la pantalla que toque -->
+    </div>
+  </main>
+
+  <!-- Ventana emergente reutilizable para todos los formularios -->
+  <dialog id="dialogo">
+    <form id="form-dialogo" method="dialog">
+      <header>
+        <h2 id="dialogo-titulo">Formulario</h2>
+        <button type="button" class="btn-icono" data-cerrar aria-label="Cerrar">✕</button>
+      </header>
+      <div id="dialogo-cuerpo"></div>
+      <footer>
+        <button type="button" class="btn" data-cerrar>Cancelar</button>
+        <button type="submit" class="btn btn-primario">Guardar</button>
+      </footer>
+    </form>
+  </dialog>
+
+  <div id="aviso" role="status" aria-live="polite"></div>
+
+  <script src="js/sha256.js"></script>
+  <script src="js/datos.js"></script>
+  <script src="js/calculos.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/vistas-cocina.js"></script>
+  <script src="js/vistas-sala.js"></script>
+  <script src="js/vistas-admin.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
